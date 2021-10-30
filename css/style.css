@@ -392,7 +392,8 @@ button.listPurple3:hover:before {
 
 .cardContainer{
     display:grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 250px 250px 250px 250px;
+    justify-content: space-evenly;
     grid-template-areas: 
     "techWrite micro infoArch research"
     ;
@@ -650,7 +651,7 @@ p.intro{
 
 /* Media Query */
 
-@media only screen and (max-width: 600px){
+@media (max-width: 1200px) and (min-width:600px){
     header{
         padding: 2%;
         display: flex;
@@ -696,9 +697,9 @@ p.intro{
 
     .cardContainer{
         display:grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: 1fr 1fr;
-        grid-row-gap:32px;
+        grid-template-columns: 250px 250px;
+        grid-template-rows: 250px 250px;
+        row-gap: 100px;
         margin:0 2%;
         grid-template-areas: 
         "techWrite micro"
@@ -715,3 +716,123 @@ p.intro{
     
     
 }
+
+@media (max-width:599px){
+    header{
+        padding: 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;        
+        flex-direction: column;
+    }
+    
+    nav ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding:0;
+    }
+
+    footer{
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+        text-align: center;
+        margin-top: auto;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 1%;
+    }
+
+    .dropdown-content{    
+        display:none;
+        width: 100%;
+        background-color:#4B4B53;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 33px;
+        color:#FFFFFF;
+        padding: 8px 8px 8px 8px;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
+    .cardContainer{
+        display:grid;
+        grid-template-columns: 175px 175px;
+        grid-template-rows: 175px 175px;
+        row-gap: 16px;
+        margin:0 2%;
+        grid-template-areas: 
+        "techWrite micro"
+        "research infoArch"
+        ;
+    }
+
+    .flip-card {
+        width: 175px;
+        height: 175px;
+        cursor: pointer;
+        perspective: 1000px;
+        justify-self: center;
+    }
+
+    .centeredForm{
+        margin: auto;    
+        padding-top:50px;
+        padding-bottom:50px;
+        width: 80%;
+    }
+    
+    h3.purpleCard{
+        font-size: 20px;
+    }
+    
+    h3.blueCard{
+        font-size: 20px;
+    }
+    
+    p.blueCard, p.purpleCard{
+        font-size: 14px;
+        line-height: 20px;
+        margin:2%;
+    }
+
+    #nameLogo{
+        font-size: 36px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    h3.noBold{
+        font-size: 20px;
+    }
+
+    h3.resume{
+        font-size: 22px;
+    }
+    
+    p.intro{
+        font-size: 20px;
+    }
+    
+    button.listPurple, button.listBlue{
+        width: 300px;
+        height: 102px;
+        font-size: 20px;
+        line-height: 33px;
+    }
+    
+    .buttons2{        
+        padding:0 0 50px 0;
+        text-align: center;
+    }
+}
+
+
