@@ -14,7 +14,15 @@ for (var i = 0; i < acc.length; i++) {
 }
 
 //Card Flip Click
-$(document).on("click", ".flip-card", function () {
-    $(this).toggleClass('hover');
-});
+/*$(document).on("click", ".flip-card", function () {
+  $(this).toggleClass('hover');
+});*/
+
+var flip = document.getElementsByClassName("flip-card");
+function flipCard(){
+  flip.classList.toggle("flip-card");
+
+  flip.addEventListener("click", flipCard);
+
+}
 

@@ -20,8 +20,10 @@ body{
 }
 
 header{
-    padding-top: 2%;
-    
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .portfolioSection{
@@ -35,8 +37,8 @@ footer{
     flex-wrap: wrap-reverse;
     margin-top: auto;
     vertical-align: center;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding-left: 2%;
+    padding-right: 2%;
     padding-bottom: 1%;
 }
 
@@ -62,15 +64,27 @@ footer{
 
 /*Navigation*/
 
-nav{
-    width: 73%;
-    padding: 1%;
+#nameLogoContainer{
+    display:flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#nameLogo{
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 54px;
+    color:#E6EEFC;
+    padding-left: 21px;
 }
 
 nav ul{
     list-style-type: none;
     display: flex;
     justify-content: right;
+    padding:0;
 }
 
 li a{
@@ -80,12 +94,6 @@ li a{
 
 .portfolioNav{
     padding-right: 96px;
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 33px;
-    color:#E6EEFC;
     cursor: pointer;
 }
 
@@ -93,7 +101,7 @@ li a{
     text-decoration: underline;
 }
 
-li.navEnd{
+.navItems{
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
@@ -106,13 +114,13 @@ li.navEnd{
     text-decoration: underline;
 }
 
-.portfolioNav:hover, li.navEnd:hover{
+.navItems:hover, .portfolioNav:hover{
     text-decoration: underline;
 }
 
-.navDropdown{
+/*.navDropdown{
     display: inline-block;
-}
+}*/
 
 .dropdown-content{    
     display:none;
@@ -161,25 +169,14 @@ li.navEnd{
     text-decoration: underline;
 }
 
+
+
 /* Classes */
 
 .inline-block{
     display: inline-block;
     vertical-align: bottom;
 }
-
-.logo{
-    width: 20%;
-    padding-left: 2.5%;
-    text-align: center;    
-    vertical-align: center;
-}
-
-/*div.right{
-    display: inline-flex;
-    justify-content: right;
-    vertical-align: center;
-}*/
 
 img.padded{
     padding-right:34px;
@@ -205,7 +202,7 @@ img.padded{
     margin: auto;    
     padding-top:50px;
     padding-bottom:20px;
-    width: 680px;
+    width: 50%;
 }
 
 .buttonContainer{
@@ -394,9 +391,28 @@ button.listPurple3:hover:before {
 /* Cards */
 
 .cardContainer{
-    display:flex;
-    justify-content: space-evenly;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 
+    "techWrite micro infoArch research"
+    ;
     margin:0 5%;
+}
+
+#techWrite{
+    grid-area: techWrite;
+}
+
+#micro{
+    grid-area: micro;
+}
+
+#research{
+    grid-area: research;
+}
+
+#infoArch{
+    grid-area: infoArch;
 }
 
 .flip-card {
@@ -405,6 +421,7 @@ button.listPurple3:hover:before {
     height: 250px;
     cursor: pointer;
     perspective: 1000px;
+    justify-self: center;
 }
 
 .flip-card-inner {
@@ -415,10 +432,6 @@ button.listPurple3:hover:before {
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
-
-/*.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}*/
 
 .flip-card.hover .flip-card-inner {
     transform: rotateY(180deg);
@@ -573,7 +586,6 @@ p.intro{
     color: #E6EEFC;
     text-align: center;
     width: 75%;
-    height: 123px;
     display: flex;
     align-items: center;
     margin: auto;
@@ -634,4 +646,72 @@ p.intro{
 
 .sectionMargin{
     margin: 8px 0;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 600px){
+    header{
+        padding: 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;        
+        flex-direction: column;
+    }
+    
+    nav ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding:0;
+    }
+
+    footer{
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+        text-align: center;
+        margin-top: auto;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 1%;
+    }
+
+    .dropdown-content{    
+        display:none;
+        width: 100%;
+        background-color:#4B4B53;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 33px;
+        color:#FFFFFF;
+        padding: 8px 8px 8px 8px;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+    }
+
+    .cardContainer{
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap:32px;
+        margin:0 2%;
+        grid-template-areas: 
+        "techWrite micro"
+        "research infoArch"
+        ;
+    }
+
+    .centeredForm{
+        margin: auto;    
+        padding-top:50px;
+        padding-bottom:50px;
+        width: 80%;
+    }
+    
+    
 }
